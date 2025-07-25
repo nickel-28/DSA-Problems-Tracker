@@ -10,7 +10,7 @@ const Tracker = () => {
   useEffect(() => {
     const fetchProblems = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/problems");
+        const res = await axios.get("https://dsa-problems-tracker.onrender.com/api/problems");
         setProblems(res.data);
       } catch (err) {
         console.error("Error fetching problems:", err);
