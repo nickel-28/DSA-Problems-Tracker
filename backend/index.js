@@ -9,7 +9,7 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-  origin: "https://capable-mochi-31cd0b.netlify.app",
+  origin: "https://shiny-melomakarona-9f0037.netlify.app",
 }));
 app.use(express.json());
 
