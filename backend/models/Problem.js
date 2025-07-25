@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
 
 const problemSchema = new mongoose.Schema({
+  id: Number,
   name: String,
   link: String,
-  difficulty: String,
   category: String,
+  level: String,
 });
 
-export default mongoose.model("Problem", problemSchema);
+// 🔥 Fix: explicitly set the collection name to "problem"
+const Problem = mongoose.model("Problem", problemSchema, "problem");
+
+export default Problem;
