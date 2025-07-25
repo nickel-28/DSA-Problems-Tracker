@@ -7,7 +7,10 @@ import Problem from "./models/Problem.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "https://capable-mochi-31cd0b.netlify.app",
+}));
 app.use(express.json());
 
 mongoose
