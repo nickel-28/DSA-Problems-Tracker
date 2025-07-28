@@ -27,5 +27,15 @@ app.get("/api/problems", async (req, res) => {
   }
 });
 
+app.post("/api/problems", async (req, res) => {
+  try {
+    const newProblem = new Problem(req.body);
+    const saved = await newProblem.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to add problem" });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
