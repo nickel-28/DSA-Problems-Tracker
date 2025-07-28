@@ -18,7 +18,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-app.get("/problems", async (req, res) => {
+app.get("/api/problems", async (req, res) => {
   try {
     const problems = await Problem.find();
     res.json(problems);
